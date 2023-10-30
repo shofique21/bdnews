@@ -1,4 +1,7 @@
-<?php  session_start(); ?>
+<?php  
+session_start(); 
+include('db/dbconfig.php');
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -40,11 +43,12 @@
                 <div class="collapse navbar-collapse" id="myNavbar">
                     <ul class="nav navbar-nav">
                         <li class="active"><a href="#">Home</a></li>
-                        <li><a href="#">Bangladesh</a></li>
-                        <li><a href="#">International</a></li>
-                        <li><a href="#">Politices</a></li>
-                        <li><a href="#">Sports</a></li>
-                        <li><a href="#">Enterainment</a></li>
+                        <?php
+                         $sql = 'SELECT * FROM category order by name';
+                         $query = mysqli_query($link, $sql);
+                          while ($category = mysqli_fetch_array($query)) { ?>
+                          <li><a href="#"><?php echo $category['name']; ?></a></li>
+                        <?php } ?>
                         <?php
                     if(isset($_SESSION['is_login']) && $_SESSION['is_login'] == true &&  $_SESSION["user_type"] == 2) {
                         
@@ -52,8 +56,8 @@
                         <li class="dropdown">
                             <a class="dropdown-toggle" data-toggle="dropdown" href="#">Dashboard <span class="caret"></span></a>
                             <ul class="dropdown-menu">
-                                <li><a href="createCategory.php">Category</a></li>
-                                <li><a href="#">Page 1-2</a></li>
+                                <li><a href="createCategory.php">Create Category</a></li>
+                                <li><a href="categoryList.php">Category List</a></li>
                                 <li><a href="#">Page 1-3</a></li>
                             </ul>
                         </li>
