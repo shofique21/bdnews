@@ -1,0 +1,50 @@
+header{
+   max-height: 100px;
+   margin: 0 auto;
+   padding: 20px 0; 
+   background-color: #F7F3F2;
+}
+.pad-left-15{
+    padding-left: 15px;
+}
+.pad-right-15{
+    padding-right: 15px;
+}
+.flex-container {
+    display: flex;
+  }
+  .flex-container > div {
+    text-align: center;
+    line-height: 75px;
+    font-size: 20px;
+  }  
+.menuber{
+   background-color: #AAB7B8;
+}
+marquee{
+    font-size: 20px;
+    font-weight: 600;
+    color: #333;
+    font-family: sans-serif;
+}
+.card-title{
+    font-weight: 600;
+}
+.m-bt-20{
+    margin-bottom: 20px;
+}
+
+.footer {
+    min-height: 100px;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #999;
+    color: white;
+    text-align: center;
+ }
+
+ .form-section{
+    margin-bottom: 50px;
+    padding-bottom: 60px !important;
+ }
